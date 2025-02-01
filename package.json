@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "ayman-ext.helloWorld",
-        "title": "Hello World"
+        "command": "ayman-ext.himom",
+        "title": "chat with deepseek-code"
       }
     ]
   },

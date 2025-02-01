@@ -1,7 +1,7 @@
 {
   "name": "deepseek-coder-v2l",
   "displayName": "Deepseek-Coder-v2L",
-  "description": "",
+  "description": "AI-powered coding assistant using Deepseek Coder",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
@@ -9,15 +9,39 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:deepseek-coder-v2l.start",
+    "onCommand:deepseek-coder-v2l.explainCode"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "deepseek-coder-v2l.start",
         "title": "Chat"
+      },
+      {
+        "command": "deepseek-coder-v2l.explainCode",
+        "title": "Explain Selected Code"
       }
-    ]
+    ],
+    "keybindings": [
+      {
+        "command": "deepseek-coder-v2l.explainCode",
+        "key": "ctrl+shift+e",
+        "mac": "cmd+shift+e",
+        "when": "editorHasSelection"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "deepseek-coder-v2l.explainCode",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
